@@ -1,0 +1,12 @@
+# Publishes the already-built Angular files in public/ to GitLab Pages.
+# Project site URL must be https://<namespace>.gitlab.io/pocket-chaos-poc/
+# so it matches the production <base href="/pocket-chaos-poc/">.
+pages:
+  stage: deploy
+  script:
+    - echo "Publishing static Angular dist from public/"
+  artifacts:
+    paths:
+      - public
+  rules:
+    - if: $CI_COMMIT_BRANCH == "main"
