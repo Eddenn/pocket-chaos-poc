@@ -1,10 +1,11 @@
-# Publishes the already-built Angular files in public/ to GitLab Pages.
-# Project site URL must be https://<namespace>.gitlab.io/pocket-chaos-poc/
-# so it matches the production <base href="/pocket-chaos-poc/">.
+# Optional GitLab Pages publish. GitHub Pages serves the repository root directly.
+# Project site URL must stay /pocket-chaos-poc/ to match <base href="/pocket-chaos-poc/">.
 pages:
   stage: deploy
   script:
-    - echo "Publishing static Angular dist from public/"
+    - mkdir -p public/assets
+    - cp index.html 404.html favicon.ico .nojekyll *.js *.css public/
+    - cp assets/loup-rose-poc.png public/assets/
   artifacts:
     paths:
       - public
