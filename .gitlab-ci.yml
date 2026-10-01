@@ -5,7 +5,7 @@ pages:
   script:
     - mkdir -p public/assets
     - cp index.html 404.html favicon.ico .nojekyll *.js *.css public/
-    - cp assets/loup-rose-poc.png public/assets/
+    - cp assets/* public/assets/
   artifacts:
     paths:
       - public
